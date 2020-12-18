@@ -96,8 +96,8 @@ class ControlsViewController: UIViewController {
     private func toggleAirplay() {
         guard session.isConnected && session.isAuthorized else { return }
 
-        let airplayCommand = "nohup sh ~/Tools/Scripts/start_airplay.sh -u https://www.netflix.com/ >/dev/null 2>&1 &"
-        let killCommand = "pkill -f start_airplay"
+        let airplayCommand = "nohup sh ~/Tools/Scripts/start_airplay.sh >/dev/null 2>&1 &"
+        let killCommand = "pkill -f start_airplay\\|rpiplay"
         var error: NSError?
         session.channel.execute(airplayState ? killCommand : airplayCommand, error: &error)
         if error != nil { }
