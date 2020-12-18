@@ -3,27 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A36C8DDCE0B2CAAEC232E71F /* Pods_PieControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9FD5EACEC49740591E76AC /* Pods_PieControl.framework */; };
 		E84DA4E7258CBADD003CE7F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84DA4E6258CBADD003CE7F5 /* AppDelegate.swift */; };
 		E84DA4E9258CBADD003CE7F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84DA4E8258CBADD003CE7F5 /* SceneDelegate.swift */; };
-		E84DA4EB258CBADD003CE7F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84DA4EA258CBADD003CE7F5 /* ViewController.swift */; };
+		E84DA4EB258CBADD003CE7F5 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84DA4EA258CBADD003CE7F5 /* ControlsViewController.swift */; };
 		E84DA4EE258CBADD003CE7F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84DA4EC258CBADD003CE7F5 /* Main.storyboard */; };
 		E84DA4F0258CBAE1003CE7F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84DA4EF258CBAE1003CE7F5 /* Assets.xcassets */; };
 		E84DA4F3258CBAE1003CE7F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84DA4F1258CBAE1003CE7F5 /* LaunchScreen.storyboard */; };
+		E89E86B5258CECFB00989199 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86B4258CECFB00989199 /* LoginViewController.swift */; };
+		E89E86BF258CF35300989199 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86BE258CF35300989199 /* Button.swift */; };
+		E89E86C3258CF4F900989199 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89E86C2258CF4F900989199 /* UIKit.framework */; };
+		E89E86CA258CFB1200989199 /* TextFieldToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86C9258CFB1200989199 /* TextFieldToolbar.swift */; };
+		E89E86CE258CFE4D00989199 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64409E84981B2A1D468EE4C8 /* Pods-PieControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PieControl.debug.xcconfig"; path = "Target Support Files/Pods-PieControl/Pods-PieControl.debug.xcconfig"; sourceTree = "<group>"; };
+		BA9FD5EACEC49740591E76AC /* Pods_PieControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PieControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C88752C083AE3265173E071A /* Pods-PieControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PieControl.release.xcconfig"; path = "Target Support Files/Pods-PieControl/Pods-PieControl.release.xcconfig"; sourceTree = "<group>"; };
 		E84DA4E3258CBADD003CE7F5 /* PieControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PieControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84DA4E6258CBADD003CE7F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E84DA4E8258CBADD003CE7F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E84DA4EA258CBADD003CE7F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E84DA4EA258CBADD003CE7F5 /* ControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
 		E84DA4ED258CBADD003CE7F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E84DA4EF258CBAE1003CE7F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E84DA4F2258CBAE1003CE7F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E84DA4F4258CBAE1003CE7F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E89E86B4258CECFB00989199 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E89E86BE258CF35300989199 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		E89E86C2258CF4F900989199 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E89E86C9258CFB1200989199 /* TextFieldToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldToolbar.swift; sourceTree = "<group>"; };
+		E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36C8DDCE0B2CAAEC232E71F /* Pods_PieControl.framework in Frameworks */,
+				E89E86C3258CF4F900989199 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E12440E45373142A46A5604 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64409E84981B2A1D468EE4C8 /* Pods-PieControl.debug.xcconfig */,
+				C88752C083AE3265173E071A /* Pods-PieControl.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A017232BC70B65F06E58952F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E89E86C2258CF4F900989199 /* UIKit.framework */,
+				BA9FD5EACEC49740591E76AC /* Pods_PieControl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E84DA4DA258CBADD003CE7F5 = {
 			isa = PBXGroup;
 			children = (
 				E84DA4E5258CBADD003CE7F5 /* PieControl */,
 				E84DA4E4258CBADD003CE7F5 /* Products */,
+				8E12440E45373142A46A5604 /* Pods */,
+				A017232BC70B65F06E58952F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,43 @@
 		E84DA4E5258CBADD003CE7F5 /* PieControl */ = {
 			isa = PBXGroup;
 			children = (
+				E89E86CC258CFE4000989199 /* Utils */,
+				E89E86BD258CF33A00989199 /* ViewController */,
+				E89E86BC258CF33200989199 /* Component */,
 				E84DA4E6258CBADD003CE7F5 /* AppDelegate.swift */,
 				E84DA4E8258CBADD003CE7F5 /* SceneDelegate.swift */,
-				E84DA4EA258CBADD003CE7F5 /* ViewController.swift */,
 				E84DA4EC258CBADD003CE7F5 /* Main.storyboard */,
 				E84DA4EF258CBAE1003CE7F5 /* Assets.xcassets */,
 				E84DA4F1258CBAE1003CE7F5 /* LaunchScreen.storyboard */,
 				E84DA4F4258CBAE1003CE7F5 /* Info.plist */,
 			);
 			path = PieControl;
+			sourceTree = "<group>";
+		};
+		E89E86BC258CF33200989199 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E89E86BE258CF35300989199 /* Button.swift */,
+				E89E86C9258CFB1200989199 /* TextFieldToolbar.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		E89E86BD258CF33A00989199 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E84DA4EA258CBADD003CE7F5 /* ControlsViewController.swift */,
+				E89E86B4258CECFB00989199 /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E89E86CC258CFE4000989199 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E84DA4F7258CBAE1003CE7F5 /* Build configuration list for PBXNativeTarget "PieControl" */;
 			buildPhases = (
+				EB2B741666F2949F022B144B /* [CP] Check Pods Manifest.lock */,
 				E84DA4DF258CBADD003CE7F5 /* Sources */,
 				E84DA4E0258CBADD003CE7F5 /* Frameworks */,
 				E84DA4E1258CBADD003CE7F5 /* Resources */,
+				71646134C93FB0D693867243 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,14 +198,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71646134C93FB0D693867243 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PieControl/Pods-PieControl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PieControl/Pods-PieControl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PieControl/Pods-PieControl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB2B741666F2949F022B144B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PieControl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E84DA4DF258CBADD003CE7F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E84DA4EB258CBADD003CE7F5 /* ViewController.swift in Sources */,
+				E89E86BF258CF35300989199 /* Button.swift in Sources */,
+				E89E86B5258CECFB00989199 /* LoginViewController.swift in Sources */,
+				E89E86CE258CFE4D00989199 /* UIViewController+Utils.swift in Sources */,
+				E84DA4EB258CBADD003CE7F5 /* ControlsViewController.swift in Sources */,
 				E84DA4E7258CBADD003CE7F5 /* AppDelegate.swift in Sources */,
 				E84DA4E9258CBADD003CE7F5 /* SceneDelegate.swift in Sources */,
+				E89E86CA258CFB1200989199 /* TextFieldToolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +395,7 @@
 		};
 		E84DA4F8258CBAE1003CE7F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64409E84981B2A1D468EE4C8 /* Pods-PieControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +415,7 @@
 		};
 		E84DA4F9258CBAE1003CE7F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C88752C083AE3265173E071A /* Pods-PieControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

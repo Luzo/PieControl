@@ -1,0 +1,20 @@
+PODS:
+  - KeychainAccess (4.2.1)
+  - NMSSH (2.3.1)
+
+DEPENDENCIES:
+  - KeychainAccess
+  - NMSSH
+
+SPEC REPOS:
+  trunk:
+    - KeychainAccess
+    - NMSSH
+
+SPEC CHECKSUMS:
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  NMSSH: cd689ae535a1581a6dd9fd4600ff71247df510a6
+
+PODFILE CHECKSUM: e6b232009030e9ac097893769ac916b7ac56b87c
+
+COCOAPODS: 1.9.3
