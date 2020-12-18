@@ -24,11 +24,11 @@
                                     <constraint firstAttribute="width" constant="414" id="mOK-BK-jVU"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DB-f7-Y0A">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DB-f7-Y0A">
+                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-To-U53">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="520"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gow-gC-Qxj" customClass="Button" customModule="PieControl" customModuleProvider="target">
                                                 <rect key="frame" x="60" y="20" width="294" height="60"/>
@@ -38,15 +38,19 @@
                                                 <rect key="frame" x="60" y="100" width="294" height="60"/>
                                                 <state key="normal" image="screensaver"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4m-gX-qsV" customClass="Button" customModule="PieControl" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBl-cZ-Q5Q" customClass="Button" customModule="PieControl" customModuleProvider="target">
                                                 <rect key="frame" x="60" y="180" width="294" height="60"/>
+                                                <state key="normal" image="airplay"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4m-gX-qsV" customClass="Button" customModule="PieControl" customModuleProvider="target">
+                                                <rect key="frame" x="60" y="260" width="294" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="5Vd-Pq-EUX"/>
                                                 </constraints>
                                                 <state key="normal" image="netflix"/>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fmi-4e-ObF">
-                                                <rect key="frame" x="60" y="260" width="294" height="160"/>
+                                                <rect key="frame" x="60" y="340" width="294" height="160"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scF-Na-Lds" customClass="Button" customModule="PieControl" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="20" width="294" height="60"/>
@@ -62,6 +66,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="hkZ-qx-Qfe" firstAttribute="height" secondItem="f4m-gX-qsV" secondAttribute="height" id="L9z-X6-MDt"/>
+                                            <constraint firstItem="FBl-cZ-Q5Q" firstAttribute="height" secondItem="f4m-gX-qsV" secondAttribute="height" id="Z4d-xO-rpJ"/>
                                             <constraint firstItem="scF-Na-Lds" firstAttribute="height" secondItem="f4m-gX-qsV" secondAttribute="height" id="lC6-cE-yoV"/>
                                             <constraint firstItem="gow-gC-Qxj" firstAttribute="height" secondItem="f4m-gX-qsV" secondAttribute="height" id="tfB-7G-hdU"/>
                                             <constraint firstItem="Kip-Tj-mxQ" firstAttribute="height" secondItem="f4m-gX-qsV" secondAttribute="height" id="yMn-Fk-HZB"/>
@@ -70,14 +75,22 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="6Z5-To-U53" firstAttribute="leading" secondItem="mWe-pu-B4g" secondAttribute="leading" id="Uke-L8-Dn8"/>
-                                    <constraint firstItem="mWe-pu-B4g" firstAttribute="trailing" secondItem="6Z5-To-U53" secondAttribute="trailing" id="ZZG-sR-win"/>
-                                    <constraint firstItem="6Z5-To-U53" firstAttribute="top" secondItem="mWe-pu-B4g" secondAttribute="top" id="bgG-6k-prn"/>
-                                    <constraint firstItem="mWe-pu-B4g" firstAttribute="bottom" secondItem="6Z5-To-U53" secondAttribute="bottom" id="txI-aE-shk"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Z5-To-U53" secondAttribute="bottom" id="Brp-Cp-NB7"/>
+                                    <constraint firstItem="6Z5-To-U53" firstAttribute="width" secondItem="0DB-f7-Y0A" secondAttribute="width" id="UQO-Vt-wVx"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Z5-To-U53" secondAttribute="trailing" id="Vct-yP-VKK"/>
+                                    <constraint firstItem="6Z5-To-U53" firstAttribute="top" secondItem="0DB-f7-Y0A" secondAttribute="top" id="dnq-50-4FO"/>
+                                    <constraint firstItem="6Z5-To-U53" firstAttribute="leading" secondItem="0DB-f7-Y0A" secondAttribute="leading" id="nDW-NI-xnW"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="vnA-kb-1WO"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="mWe-pu-B4g"/>
                             </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="jxP-Fl-Zum">
+                                <rect key="frame" x="187" y="254" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mis-BT-9Qs"/>
+                                    <constraint firstAttribute="width" constant="40" id="jK9-5S-0oe"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="9BN-OZ-Ldi">
                                 <rect key="frame" x="187" y="94" width="40" height="40"/>
                                 <constraints>
@@ -99,17 +112,21 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0DB-f7-Y0A" secondAttribute="trailing" id="5sp-lb-xc6"/>
                             <constraint firstItem="9BN-OZ-Ldi" firstAttribute="centerY" secondItem="gow-gC-Qxj" secondAttribute="centerY" id="6Pz-Dc-vvs"/>
                             <constraint firstItem="0DB-f7-Y0A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="FAA-0x-ish"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0DB-f7-Y0A" secondAttribute="bottom" id="K1J-nB-Eb9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0DB-f7-Y0A" secondAttribute="bottom" id="K1J-nB-Eb9"/>
                             <constraint firstItem="ig8-at-gFx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.5" id="MXd-Fb-Xfr"/>
                             <constraint firstItem="haA-Gp-NQM" firstAttribute="centerY" secondItem="hkZ-qx-Qfe" secondAttribute="centerY" id="WYh-Lh-t0g"/>
                             <constraint firstItem="9BN-OZ-Ldi" firstAttribute="centerX" secondItem="gow-gC-Qxj" secondAttribute="centerX" id="fYn-DZ-MmB"/>
                             <constraint firstItem="0DB-f7-Y0A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h4p-rT-tLJ"/>
                             <constraint firstItem="haA-Gp-NQM" firstAttribute="centerX" secondItem="hkZ-qx-Qfe" secondAttribute="centerX" id="jEo-yl-uve"/>
                             <constraint firstItem="ig8-at-gFx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="1.5" id="op7-mZ-lUI"/>
+                            <constraint firstItem="jxP-Fl-Zum" firstAttribute="centerX" secondItem="FBl-cZ-Q5Q" secondAttribute="centerX" id="qoK-75-Tt0"/>
+                            <constraint firstItem="jxP-Fl-Zum" firstAttribute="centerY" secondItem="FBl-cZ-Q5Q" secondAttribute="centerY" id="tTS-k8-PHO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="airplayButton" destination="FBl-cZ-Q5Q" id="hkA-lf-can"/>
                         <outlet property="connectButton" destination="gow-gC-Qxj" id="dbf-wu-ov2"/>
+                        <outlet property="crossAirplayImageView" destination="jxP-Fl-Zum" id="yPd-Qx-OPN"/>
                         <outlet property="crossImageView" destination="9BN-OZ-Ldi" id="x0z-eJ-wCP"/>
                         <outlet property="crossScreensaverImageView" destination="haA-Gp-NQM" id="3YN-VS-QT4"/>
                         <outlet property="netflixButton" destination="f4m-gX-qsV" id="3SL-ad-QMF"/>
@@ -194,9 +211,6 @@
                                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="pva-Sa-ATt" firstAttribute="width" secondItem="IWC-47-hDv" secondAttribute="width" id="Fic-p6-Vu9"/>
-                                </constraints>
                                 <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
                             </stackView>
                         </subviews>
@@ -245,6 +259,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="airplay" width="170.66667175292969" height="170.66667175292969"/>
         <image name="biometry" width="170.66667175292969" height="170.66667175292969"/>
         <image name="connect" width="526.33331298828125" height="526"/>
         <image name="cross" width="200" height="189.66667175292969"/>

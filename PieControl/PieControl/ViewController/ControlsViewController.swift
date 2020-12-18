@@ -14,13 +14,16 @@ class ControlsViewController: UIViewController {
 
     @IBOutlet weak var crossImageView: UIImageView!
     @IBOutlet weak var crossScreensaverImageView: UIImageView!
+    @IBOutlet weak var crossAirplayImageView: UIImageView!
     @IBOutlet weak var connectButton: Button!
     @IBOutlet weak var screensaverButton: Button!
+    @IBOutlet weak var airplayButton: Button!
     @IBOutlet weak var netflixButton: Button!
     @IBOutlet weak var resetButton: Button!
     @IBOutlet weak var powerOffButton: Button!
 
-    var screensaverState: Bool = false
+    private var screensaverState: Bool = false
+    private var airplayState: Bool = false
     private lazy var session = NMSSHSession(host: "raspberrypi.local", andUsername: username)
 
     override func viewDidLoad() {
@@ -29,15 +32,17 @@ class ControlsViewController: UIViewController {
         connectButton.tapAction = { [weak self] in self?.toggleSshConnection() }
         screensaverButton.tapAction = { [weak self] in self?.toggleScreensaver() }
         netflixButton.tapAction = { [weak self] in self?.showNetflix() }
+        airplayButton.tapAction = { [weak self] in self?.toggleAirplay() }
         resetButton.tapAction = { [weak self] in self?.reset() }
         powerOffButton.tapAction = { [weak self] in self?.powerOff() }
 
-        [connectButton, netflixButton, screensaverButton, resetButton, powerOffButton].forEach {
+        [connectButton, netflixButton, screensaverButton, airplayButton, resetButton, powerOffButton].forEach {
             $0?.imageView?.contentMode = .scaleAspectFit
             $0?.tintColor = .white
         }
         setButtonsForState()
         crossScreensaverImageView.isHidden = true
+        crossAirplayImageView.isHidden = true
     }
 
     func toggleSshConnection() {
@@ -61,6 +66,7 @@ class ControlsViewController: UIViewController {
         netflixButton.isHidden = !session.isConnected
         resetButton.isHidden = !session.isConnected
         powerOffButton.isHidden = !session.isConnected
+        airplayButton.isHidden = !session.isConnected
     }
 
     private func toggleScreensaver() {
@@ -78,10 +84,23 @@ class ControlsViewController: UIViewController {
     private func showNetflix() {
         guard session.isConnected && session.isAuthorized else { return }
 
-        let netflixCommand = "nohup sh Desktop/open_browser.sh -u https://www.netflix.com/ >/dev/null 2>&1 &"
+        let netflixCommand = "nohup sh ~/Tools/Scripts/open_browser.sh -u https://www.netflix.com/ >/dev/null 2>&1 &"
         var error: NSError?
         session.channel.execute(netflixCommand, error: &error)
         if error != nil { }
+    }
+
+    private func toggleAirplay() {
+        guard session.isConnected && session.isAuthorized else { return }
+
+        let airplayCommand = "nohup sh ~/Tools/Scripts/start_airplay.sh -u https://www.netflix.com/ >/dev/null 2>&1 &"
+        let killCommand = "pkill -f start_airplay"
+        var error: NSError?
+        session.channel.execute(airplayState ? killCommand : airplayCommand, error: &error)
+        if error != nil { }
+
+        airplayState = !airplayState
+        crossAirplayImageView.isHidden = !airplayState
     }
 
     private func powerOff() {
