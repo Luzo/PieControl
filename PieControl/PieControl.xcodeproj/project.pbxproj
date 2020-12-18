@@ -19,6 +19,7 @@
 		E89E86C3258CF4F900989199 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89E86C2258CF4F900989199 /* UIKit.framework */; };
 		E89E86CA258CFB1200989199 /* TextFieldToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86C9258CFB1200989199 /* TextFieldToolbar.swift */; };
 		E89E86CE258CFE4D00989199 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */; };
+		E89E86D2258D18C500989199 /* KeychainAccesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86D1258D18C500989199 /* KeychainAccesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E89E86C2258CF4F900989199 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E89E86C9258CFB1200989199 /* TextFieldToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldToolbar.swift; sourceTree = "<group>"; };
 		E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		E89E86D1258D18C500989199 /* KeychainAccesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		E84DA4E5258CBADD003CE7F5 /* PieControl */ = {
 			isa = PBXGroup;
 			children = (
+				E89E86D0258D18B700989199 /* Controller */,
 				E89E86CC258CFE4000989199 /* Utils */,
 				E89E86BD258CF33A00989199 /* ViewController */,
 				E89E86BC258CF33200989199 /* Component */,
@@ -129,6 +132,14 @@
 				E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E89E86D0258D18B700989199 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E89E86D1258D18C500989199 /* KeychainAccesController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 				E84DA4E7258CBADD003CE7F5 /* AppDelegate.swift in Sources */,
 				E84DA4E9258CBADD003CE7F5 /* SceneDelegate.swift in Sources */,
 				E89E86CA258CFB1200989199 /* TextFieldToolbar.swift in Sources */,
+				E89E86D2258D18C500989199 /* KeychainAccesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
