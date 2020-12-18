@@ -42,11 +42,7 @@ final class LoginViewController: UIViewController {
     }
 
     private func launchControls(withLogin login: Login) {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let controller = storyboard.instantiateViewController(identifier: ControlsViewController.name)
-                as? ControlsViewController else {
-            return
-        }
+        let controller = ControlsViewController.instantiateFromMain()
         controller.username = login.name
         controller.password = login.password
 

@@ -20,6 +20,7 @@
 		E89E86CA258CFB1200989199 /* TextFieldToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86C9258CFB1200989199 /* TextFieldToolbar.swift */; };
 		E89E86CE258CFE4D00989199 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */; };
 		E89E86D2258D18C500989199 /* KeychainAccesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86D1258D18C500989199 /* KeychainAccesController.swift */; };
+		E89E86D5258D193A00989199 /* UIStoryboard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E86D4258D193A00989199 /* UIStoryboard+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E89E86C9258CFB1200989199 /* TextFieldToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldToolbar.swift; sourceTree = "<group>"; };
 		E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		E89E86D1258D18C500989199 /* KeychainAccesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccesController.swift; sourceTree = "<group>"; };
+		E89E86D4258D193A00989199 /* UIStoryboard+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				E89E86CD258CFE4D00989199 /* UIViewController+Utils.swift */,
+				E89E86D4258D193A00989199 /* UIStoryboard+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E89E86BF258CF35300989199 /* Button.swift in Sources */,
+				E89E86D5258D193A00989199 /* UIStoryboard+Utils.swift in Sources */,
 				E89E86B5258CECFB00989199 /* LoginViewController.swift in Sources */,
 				E89E86CE258CFE4D00989199 /* UIViewController+Utils.swift in Sources */,
 				E84DA4EB258CBADD003CE7F5 /* ControlsViewController.swift in Sources */,
