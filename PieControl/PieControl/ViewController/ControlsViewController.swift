@@ -29,13 +29,7 @@ class ControlsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        connectButton.tapAction = { [weak self] in self?.toggleSshConnection() }
-        screensaverButton.tapAction = { [weak self] in self?.toggleScreensaver() }
-        netflixButton.tapAction = { [weak self] in self?.showNetflix() }
-        airplayButton.tapAction = { [weak self] in self?.toggleAirplay() }
-        resetButton.tapAction = { [weak self] in self?.reset() }
-        powerOffButton.tapAction = { [weak self] in self?.powerOff() }
-
+        setupButtonConnections()
         [connectButton, netflixButton, screensaverButton, airplayButton, resetButton, powerOffButton].forEach {
             $0?.imageView?.contentMode = .scaleAspectFit
             $0?.tintColor = .white
@@ -45,7 +39,16 @@ class ControlsViewController: UIViewController {
         crossAirplayImageView.isHidden = true
     }
 
-    func toggleSshConnection() {
+    private func setupButtonConnections() {
+        connectButton.tapAction = { [weak self] in self?.toggleSshConnection() }
+        screensaverButton.tapAction = { [weak self] in self?.toggleScreensaver() }
+        netflixButton.tapAction = { [weak self] in self?.showNetflix() }
+        airplayButton.tapAction = { [weak self] in self?.toggleAirplay() }
+        resetButton.tapAction = { [weak self] in self?.reset() }
+        powerOffButton.tapAction = { [weak self] in self?.powerOff() }
+    }
+
+    private func toggleSshConnection() {
         guard !session.isConnected else {
             disconnect()
             return
