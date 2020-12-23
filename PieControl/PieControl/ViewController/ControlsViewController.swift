@@ -9,9 +9,6 @@ import NMSSH
 import UIKit
 
 class ControlsViewController: UIViewController {
-    var username: String = ""
-    var password: String = ""
-
     @IBOutlet weak var crossImageView: UIImageView!
     @IBOutlet weak var crossScreensaverImageView: UIImageView!
     @IBOutlet weak var crossAirplayImageView: UIImageView!
@@ -24,7 +21,8 @@ class ControlsViewController: UIViewController {
 
     private var screensaverState: Bool = false
     private var airplayState: Bool = false
-    private lazy var session = NMSSHSession(host: "raspberrypi.local", andUsername: username)
+
+    var sessionController: SessionController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +35,11 @@ class ControlsViewController: UIViewController {
         setButtonsForState()
         crossScreensaverImageView.isHidden = true
         crossAirplayImageView.isHidden = true
+        sessionController.sessionChangeEventBlock = { [weak self] in self?.setButtonsForState() }
     }
 
     private func setupButtonConnections() {
-        connectButton.tapAction = { [weak self] in self?.toggleSshConnection() }
+        connectButton.tapAction = { [weak self] in self?.sessionController.toggleConnection() }
         screensaverButton.tapAction = { [weak self] in self?.toggleScreensaver() }
         netflixButton.tapAction = { [weak self] in self?.showNetflix() }
         airplayButton.tapAction = { [weak self] in self?.toggleAirplay() }
@@ -48,87 +47,49 @@ class ControlsViewController: UIViewController {
         powerOffButton.tapAction = { [weak self] in self?.powerOff() }
     }
 
-    private func toggleSshConnection() {
-        guard !session.isConnected else {
-            disconnect()
-            return
-        }
-
-        session.connect()
-        guard session.isConnected else { return }
-        session.authenticate(byPassword: password)
-
-        if !session.isAuthorized { disconnect() }
-
-        setButtonsForState()
-    }
-
     private func setButtonsForState() {
-        crossImageView.isHidden = !session.isConnected
-        screensaverButton.isHidden = !session.isConnected
-        netflixButton.isHidden = !session.isConnected
-        resetButton.isHidden = !session.isConnected
-        powerOffButton.isHidden = !session.isConnected
-        airplayButton.isHidden = !session.isConnected
-    }
+        crossImageView.isHidden = !sessionController.hasConnectedSession
+        screensaverButton.isHidden = !sessionController.hasConnectedSession
+        netflixButton.isHidden = !sessionController.hasConnectedSession
+        resetButton.isHidden = !sessionController.hasConnectedSession
+        powerOffButton.isHidden = !sessionController.hasConnectedSession
+        airplayButton.isHidden = !sessionController.hasConnectedSession
 
-    private func toggleScreensaver() {
-        guard session.isConnected && session.isAuthorized else { return }
-
-        let baseToggleCommand = "xscreensaver-command"
-        let stateToToggle = !screensaverState ? "-activate" : "-deactivate"
-        var error: NSError?
-        session.channel.execute("\(baseToggleCommand) \(stateToToggle)", error: &error)
-        screensaverState = !screensaverState
-        if error != nil { toggleScreensaver() }
+        if !sessionController.hasConnectedSession {
+            screensaverState = false
+            airplayState = false
+        }
         crossScreensaverImageView.isHidden = !screensaverState
-    }
-
-    private func showNetflix() {
-        guard session.isConnected && session.isAuthorized else { return }
-
-        let netflixCommand = "nohup sh ~/Tools/Scripts/open_browser.sh -u https://www.netflix.com/ >/dev/null 2>&1 &"
-        var error: NSError?
-        session.channel.execute(netflixCommand, error: &error)
-        if error != nil { }
-    }
-
-    private func toggleAirplay() {
-        guard session.isConnected && session.isAuthorized else { return }
-
-        let airplayCommand = "nohup sh ~/Tools/Scripts/start_airplay.sh >/dev/null 2>&1 &"
-        let killCommand = "pkill -f start_airplay\\|rpiplay"
-        var error: NSError?
-        session.channel.execute(airplayState ? killCommand : airplayCommand, error: &error)
-        if error != nil { }
-
-        airplayState = !airplayState
         crossAirplayImageView.isHidden = !airplayState
     }
 
-    private func powerOff() {
-        guard session.isConnected && session.isAuthorized else { return }
+    private func toggleScreensaver() {
+        let baseToggleCommand = "xscreensaver-command"
+        let stateToToggle = !screensaverState ? "-activate" : "-deactivate"
 
-        var error: NSError?
-        session.channel.execute("sudo shutdown -h now", error: &error)
-        guard error == nil else { return }
-
-        disconnect()
+        if sessionController.executeCommand("\(baseToggleCommand) \(stateToToggle)") {
+            screensaverState = !screensaverState
+            setButtonsForState()
+        } else {
+            toggleScreensaver()
+        }
     }
 
-    private func reset() {
-        guard session.isConnected && session.isAuthorized else { return }
-
-        var error: NSError?
-        session.channel.execute("sudo reboot", error: &error)
-        guard error == nil else { return }
-
-        disconnect()
+    private func showNetflix() {
+        sessionController.executeCommand("sh ~/Tools/Scripts/open_browser.sh -u https://www.netflix.com/")
     }
 
-    private func disconnect() {
-        session.disconnect()
-        setButtonsForState()
+    private func toggleAirplay() {
+        let airplayCommand = "sh ~/Tools/Scripts/start_airplay.sh"
+        let killCommand = "pkill -f start_airplay\\|rpiplay"
+        if sessionController.executeCommand(airplayState ? killCommand : airplayCommand) {
+            airplayState = !airplayState
+            setButtonsForState()
+        }
     }
+
+    private func powerOff() { sessionController.executeCommand("sudo shutdown -h now") }
+
+    private func reset() { sessionController.executeCommand("sudo reboot") }
 }
 

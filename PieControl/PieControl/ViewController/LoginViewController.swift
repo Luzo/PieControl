@@ -43,8 +43,8 @@ final class LoginViewController: UIViewController {
 
     private func launchControls(withLogin login: Login) {
         let controller = ControlsViewController.instantiateFromMain()
-        controller.username = login.name
-        controller.password = login.password
+        let sessionController = SessionController(username: login.name, password: login.password)
+        controller.sessionController = sessionController
 
         navigationController?.pushViewController(controller, animated: true)
     }
